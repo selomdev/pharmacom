@@ -1,0 +1,144 @@
+2016/12/01 22:42:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Impossible de résoudre la requête « pharmatie/allpharmaties ».' in C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(141): CWebApplication->runController('pharmatie/allph...')
+#1 C:\xampp\htdocs\MyApp\projetPhrama\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\MyApp\projetPhrama\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/projetPhrama/pharmatie/allpharmaties
+---
+2016/12/01 22:43:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Le système ne peut trouver l'action « allpharmaties » demandée.' in C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(270): CController->missingAction('allpharmaties')
+#1 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(282): CController->run('allpharmaties')
+#2 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(141): CWebApplication->runController('pharmatie/allph...')
+#3 C:\xampp\htdocs\MyApp\projetPhrama\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\MyApp\projetPhrama\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/projetPhrama/pharmatie/allpharmaties
+---
+2016/12/01 22:45:46 [error] [php] Missing argument 1 for CActiveRecord::findAllByAttributes(), called in C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php on line 9 and defined (C:\xampp\htdocs\MyApp\projetPhrama\framework\db\ar\CActiveRecord.php:1536)
+Stack trace:
+#0 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(286): PharmatieController->runAction()
+#2 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(265): PharmatieController->runActionWithFilters()
+#3 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(282): PharmatieController->run()
+#4 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\MyApp\projetPhrama\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\MyApp\projetPhrama\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetPhrama/pharmatie/allpharmatie
+in C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php (9)
+in C:\xampp\htdocs\MyApp\projetPhrama\index.php (13)
+2016/12/01 22:47:38 [error] [php] include(CDataProvides.php): failed to open stream: No such file or directory (C:\xampp\htdocs\MyApp\projetPhrama\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php(10): spl_autoload_call()
+#1 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\actions\CInlineAction.php(49): PharmatieController->actionAllPharmatie()
+#2 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(286): PharmatieController->runAction()
+#4 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(265): PharmatieController->runActionWithFilters()
+#5 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(282): PharmatieController->run()
+#6 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\MyApp\projetPhrama\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\MyApp\projetPhrama\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetPhrama/pharmatie/allpharmatie
+in C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php (10)
+in C:\xampp\htdocs\MyApp\projetPhrama\index.php (13)
+2016/12/01 22:58:31 [error] [php] include(PharmatieEnLinge.php): failed to open stream: No such file or directory (C:\xampp\htdocs\MyApp\projetPhrama\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\xampp\htdocs\MyApp\projetPhrama\framework\db\ar\CActiveRecord.php(395): spl_autoload_call()
+#1 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CActiveDataProvider.php(165): model()
+#2 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CActiveDataProvider.php(87): CActiveDataProvider->getModel()
+#3 C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php(12): CActiveDataProvider->__construct()
+#4 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\actions\CInlineAction.php(49): PharmatieController->actionAllPharmatie()
+#5 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(286): PharmatieController->runAction()
+#7 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(265): PharmatieController->runActionWithFilters()
+#8 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(282): PharmatieController->run()
+#9 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\MyApp\projetPhrama\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\MyApp\projetPhrama\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetPhrama/pharmatie/allpharmatie
+in C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php (12)
+in C:\xampp\htdocs\MyApp\projetPhrama\index.php (13)
+2016/12/01 22:59:24 [error] [php] include(PharmatieEnLinge.php): failed to open stream: No such file or directory (C:\xampp\htdocs\MyApp\projetPhrama\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php(10): spl_autoload_call()
+#1 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\actions\CInlineAction.php(49): PharmatieController->actionAllPharmatie()
+#2 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(286): PharmatieController->runAction()
+#4 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(265): PharmatieController->runActionWithFilters()
+#5 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(282): PharmatieController->run()
+#6 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\MyApp\projetPhrama\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\MyApp\projetPhrama\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetPhrama/pharmatie/allpharmatie
+in C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php (10)
+in C:\xampp\htdocs\MyApp\projetPhrama\index.php (13)
+2016/12/01 22:59:26 [error] [php] include(PharmatieEnLinge.php): failed to open stream: No such file or directory (C:\xampp\htdocs\MyApp\projetPhrama\framework\YiiBase.php:432)
+Stack trace:
+#0 C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php(10): spl_autoload_call()
+#1 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\actions\CInlineAction.php(49): PharmatieController->actionAllPharmatie()
+#2 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(286): PharmatieController->runAction()
+#4 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(265): PharmatieController->runActionWithFilters()
+#5 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(282): PharmatieController->run()
+#6 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\MyApp\projetPhrama\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\MyApp\projetPhrama\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetPhrama/pharmatie/allpharmatie
+in C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php (10)
+in C:\xampp\htdocs\MyApp\projetPhrama\index.php (13)
+2016/12/01 23:07:20 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php:12)
+Stack trace:
+#0 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(286): PharmatieController->runAction()
+#1 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(265): PharmatieController->runActionWithFilters()
+#2 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(282): PharmatieController->run()
+#3 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\MyApp\projetPhrama\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\MyApp\projetPhrama\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetPhrama/pharmatie/allpharmatie
+in C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php (12)
+in C:\xampp\htdocs\MyApp\projetPhrama\index.php (13)
+2016/12/01 23:07:38 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php:12)
+Stack trace:
+#0 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(286): PharmatieController->runAction()
+#1 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(265): PharmatieController->runActionWithFilters()
+#2 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(282): PharmatieController->run()
+#3 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\MyApp\projetPhrama\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\MyApp\projetPhrama\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetPhrama/pharmatie/allpharmatie
+in C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php (12)
+in C:\xampp\htdocs\MyApp\projetPhrama\index.php (13)
+2016/12/01 23:08:34 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php:12)
+Stack trace:
+#0 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(286): PharmatieController->runAction()
+#1 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(265): PharmatieController->runActionWithFilters()
+#2 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(282): PharmatieController->run()
+#3 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\MyApp\projetPhrama\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\MyApp\projetPhrama\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetPhrama/pharmatie/allpharmatie
+in C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php (12)
+in C:\xampp\htdocs\MyApp\projetPhrama\index.php (13)
+2016/12/01 23:09:20 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php:10)
+Stack trace:
+#0 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(286): PharmatieController->runAction()
+#1 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(265): PharmatieController->runActionWithFilters()
+#2 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(282): PharmatieController->run()
+#3 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\MyApp\projetPhrama\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\MyApp\projetPhrama\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetPhrama/pharmatie/allpharmatie
+in C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php (10)
+in C:\xampp\htdocs\MyApp\projetPhrama\index.php (13)
+2016/12/01 23:15:19 [error] [php] Undefined variable: phar (C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(286): PharmatieController->runAction()
+#1 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CController.php(265): PharmatieController->runActionWithFilters()
+#2 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(282): PharmatieController->run()
+#3 C:\xampp\htdocs\MyApp\projetPhrama\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\MyApp\projetPhrama\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\MyApp\projetPhrama\index.php(13): CWebApplication->run()
+REQUEST_URI=/projetPhrama/pharmatie/allpharmatie
+in C:\xampp\htdocs\MyApp\projetPhrama\protected\controllers\pharmatieController.php (14)
+in C:\xampp\htdocs\MyApp\projetPhrama\index.php (13)
