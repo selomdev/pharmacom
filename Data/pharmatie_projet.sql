@@ -1,7 +1,7 @@
 -- phpMyAdmin SQL Dump
 -- version 4.4.12
 -- http://www.phpmyadmin.net
--- Arthur
+-- Arthur --- dina 2000 test
 -- Client :  127.0.0.1
 -- Généré le :  Ven 09 Décembre 2016 à 12:44
 -- Version du serveur :  5.6.25
