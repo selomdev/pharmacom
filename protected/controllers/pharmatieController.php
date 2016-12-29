@@ -58,11 +58,16 @@ if (isset($postData)){
     foreach ($request as $k=>$v){
         $model->$k = $v;
     }
-    if($model->save()){
-        echo json_encode("Success");
+    if($model->validate()){
+        if($model->save()) {
+            echo json_encode("Success");
+        }else{
+            echo json_encode("Erreur lors de la sauvegarde des donnees veuillez reessayer");
+        }
     }
     else{
-        echo json_encode("Error");
+       $error= $model->getErrors();
+        echo json_encode($error);
     }
 }
 else{
