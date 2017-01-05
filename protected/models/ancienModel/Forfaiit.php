@@ -1,27 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "abonnement".
+ * This is the model class for table "forfaiit".
  *
- * The followings are the available columns in table 'abonnement':
- * @property integer $id_abonnement
- * @property string $dateExpire
+ * The followings are the available columns in table 'forfaiit':
  * @property integer $id_forfaiit
- * @property integer $id_pharm_id
- * @property string $data_abonnement
+ * @property string $nom_Forfait
+ * @property integer $duree
+ * @property double $montant
  *
  * The followings are the available model relations:
- * @property Forfaiit $idForfaiit
- * @property PharmatieEnligne $idPharm
+ * @property Abonnement[] $abonnements
  */
-class Abonnement extends CActiveRecord
+class Forfaiit extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'abonnement';
+		return 'forfaiit';
 	}
 
 	/**
@@ -32,12 +30,12 @@ class Abonnement extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_abonnement, id_forfaiit, id_pharm_id', 'required'),
-			array('id_abonnement, id_forfaiit, id_pharm_id', 'numerical', 'integerOnly'=>true),
-			array('dateExpire, data_abonnement', 'safe'),
+			array('duree', 'numerical', 'integerOnly'=>true),
+			array('montant', 'numerical'),
+			array('nom_Forfait', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_abonnement, dateExpire, id_forfaiit, id_pharm_id, data_abonnement', 'safe', 'on'=>'search'),
+			array('id_forfaiit, nom_Forfait, duree, montant', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -49,8 +47,7 @@ class Abonnement extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idForfaiit' => array(self::BELONGS_TO, 'Forfaiit', 'id_forfaiit'),
-			'idPharm' => array(self::BELONGS_TO, 'PharmatieEnligne', 'id_pharm_id'),
+			'abonnements' => array(self::HAS_MANY, 'Abonnement', 'id_forfaiit'),
 		);
 	}
 
@@ -60,11 +57,10 @@ class Abonnement extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_abonnement' => 'Id Abonnement',
-			'dateExpire' => 'Date Expire',
 			'id_forfaiit' => 'Id Forfaiit',
-			'id_pharm_id' => 'Id Pharm',
-			'data_abonnement' => 'Data Abonnement',
+			'nom_Forfait' => 'Nom Forfait',
+			'duree' => 'Duree',
+			'montant' => 'Montant',
 		);
 	}
 
@@ -86,11 +82,10 @@ class Abonnement extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id_abonnement',$this->id_abonnement);
-		$criteria->compare('dateExpire',$this->dateExpire,true);
 		$criteria->compare('id_forfaiit',$this->id_forfaiit);
-		$criteria->compare('id_pharm_id',$this->id_pharm_id);
-		$criteria->compare('data_abonnement',$this->data_abonnement,true);
+		$criteria->compare('nom_Forfait',$this->nom_Forfait,true);
+		$criteria->compare('duree',$this->duree);
+		$criteria->compare('montant',$this->montant);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -101,7 +96,7 @@ class Abonnement extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Abonnement the static model class
+	 * @return Forfaiit the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

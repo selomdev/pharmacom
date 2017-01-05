@@ -1,27 +1,27 @@
 <?php
 
 /**
- * This is the model class for table "abonnement".
+ * This is the model class for table "contactlign".
  *
- * The followings are the available columns in table 'abonnement':
- * @property integer $id_abonnement
- * @property string $dateExpire
- * @property integer $id_forfaiit
- * @property integer $id_pharm_id
- * @property string $data_abonnement
+ * The followings are the available columns in table 'contactlign':
+ * @property integer $id_ContactLign
+ * @property string $nom_contactLign
+ * @property string $prenom_contLign
+ * @property string $Login
+ * @property string $passWord
+ * @property integer $id_pharmatie
  *
  * The followings are the available model relations:
- * @property Forfaiit $idForfaiit
- * @property PharmatieEnligne $idPharm
+ * @property PharmatieEnligne $idPharmatie
  */
-class Abonnement extends CActiveRecord
+class Contactlign extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'abonnement';
+		return 'contactlign';
 	}
 
 	/**
@@ -32,12 +32,14 @@ class Abonnement extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_abonnement, id_forfaiit, id_pharm_id', 'required'),
-			array('id_abonnement, id_forfaiit, id_pharm_id', 'numerical', 'integerOnly'=>true),
-			array('dateExpire, data_abonnement', 'safe'),
+			array('id_pharmatie', 'required'),
+			array('id_pharmatie', 'numerical', 'integerOnly'=>true),
+			array('nom_contactLign, prenom_contLign', 'length', 'max'=>150),
+			array('Login', 'length', 'max'=>45),
+			array('passWord', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_abonnement, dateExpire, id_forfaiit, id_pharm_id, data_abonnement', 'safe', 'on'=>'search'),
+			array('id_ContactLign, nom_contactLign, prenom_contLign, Login, passWord, id_pharmatie', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -49,8 +51,7 @@ class Abonnement extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idForfaiit' => array(self::BELONGS_TO, 'Forfaiit', 'id_forfaiit'),
-			'idPharm' => array(self::BELONGS_TO, 'PharmatieEnligne', 'id_pharm_id'),
+			'Pharmatie' => array(self::BELONGS_TO, 'PharmatieEnligne', 'id_pharmatie'),
 		);
 	}
 
@@ -60,11 +61,12 @@ class Abonnement extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_abonnement' => 'Id Abonnement',
-			'dateExpire' => 'Date Expire',
-			'id_forfaiit' => 'Id Forfaiit',
-			'id_pharm_id' => 'Id Pharm',
-			'data_abonnement' => 'Data Abonnement',
+			'id_ContactLign' => 'Id Contact Lign',
+			'nom_contactLign' => 'Nom Contact Lign',
+			'prenom_contLign' => 'Prenom Cont Lign',
+			'Login' => 'Login',
+			'passWord' => 'Pass Word',
+			'id_pharmatie' => 'Id Pharmatie',
 		);
 	}
 
@@ -86,11 +88,12 @@ class Abonnement extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id_abonnement',$this->id_abonnement);
-		$criteria->compare('dateExpire',$this->dateExpire,true);
-		$criteria->compare('id_forfaiit',$this->id_forfaiit);
-		$criteria->compare('id_pharm_id',$this->id_pharm_id);
-		$criteria->compare('data_abonnement',$this->data_abonnement,true);
+		$criteria->compare('id_ContactLign',$this->id_ContactLign);
+		$criteria->compare('nom_contactLign',$this->nom_contactLign,true);
+		$criteria->compare('prenom_contLign',$this->prenom_contLign,true);
+		$criteria->compare('Login',$this->Login,true);
+		$criteria->compare('passWord',$this->passWord,true);
+		$criteria->compare('id_pharmatie',$this->id_pharmatie);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -101,7 +104,7 @@ class Abonnement extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Abonnement the static model class
+	 * @return Contactlign the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

@@ -79,5 +79,72 @@ else{
 
 }
 
+    public function actionVuePharmacie()
+    {
+        if(isset($_GET['q'])){
+            $id= $_GET['q'];
+            $contact=[];
+            $abonnement=[];
+            $stock=[];
+            $pharmacie = PharmatieEnligne::model()->find("id=$id");
+            $contacts = Contactlign::model()->findAll("id_pharmatie=$id");
+            $stocks = Stock::model()->findAll("id_pharmatie=$id");
+
+//      $contact = new CActiveDataProvider('Contactlign',array(
+//          'criteria'=>array(
+//              'condition'=>'id_pharmatie='.$id,
+//              'with'=>array('Pharmatie'),
+//          )
+//      ));
+
+         //   $data=array();
+            $contatf=[];
+            $i=0;
+            foreach($contacts as $contac){
+
+                $contatf[$i]= $contac->attributes;
+
+                $i++;
+            }
+            foreach ($contatf as $cont=>$value) {
+                $champs=array();
+                foreach ($value as $key=>$v){
+                    $champs[$key]=($v);
+                }
+                $contact[$cont]=$champs;
+            }
+
+            /**
+             * Stock Pharmatice
+             */
+            $stockf=[];
+
+            foreach($stocks as $stoc){
+
+                $stockf[$i]= $stoc->attributes;
+
+                $i++;
+            }
+            foreach ($stockf as $stok=>$value) {
+                $champs=array();
+                foreach ($value as $key=>$v){
+                    $champs[$key]=($v);
+                }
+                $stock[$stok]=$champs;
+            }
+            /**
+             * Affcihage des donnees
+             */
+
+            header("Access-Control-Allow-Origin:*");
+            header("Content-Type:application/json;charset=utf-8");
+            echo json_encode(['Pharmacie'=>$pharmacie->attributes,'Contact'=>$contact,"Stock"=>$stock]);
+//            echo  json_encode();
+}else{
+    echo 'Nooooooo!!!!';
+}
+
+}
+
 
 }

@@ -61,7 +61,7 @@ class PharmatieEnligne extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'abonnements' => array(self::HAS_MANY, 'Abonnement', 'id_pharm_id'),
+			'abonnements' => array(self::MANY_MANY, 'Abonnement', 'abonnement_pharmatie(id_pharmatie, id_abonnement)'),
 			'contactligns' => array(self::HAS_MANY, 'Contactlign', 'id_pharmatie'),
 			'stocks' => array(self::HAS_MANY, 'Stock', 'id_pharmatie'),
 		);
@@ -75,19 +75,19 @@ class PharmatieEnligne extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'nom_pharmaLign' => 'Nom Pharma Lign',
-			'tel1' => 'Tel1',
-			'tel2' => 'Tel2',
-			'email1' => 'Email1',
-			'email2' => 'Email2',
+			'tel1' => 'Téléphone 1',
+			'tel2' => 'Téléphone 2',
+			'email1' => 'Email 1',
+			'email2' => 'Email 2',
 			'Nom_diri' => 'Nom Diri',
-			'tel1_dir' => 'Tel1 Dir',
-			'tel2_dir' => 'Tel2 Dir',
-			'email1_dir' => 'Email1 Dir',
-			'email2_dir' => 'Email2 Dir',
+			'tel1_dir' => 'Téléphone 1 Dir',
+			'tel2_dir' => 'Téléphone 2 Dir',
+			'email1_dir' => 'Email 1 Dir',
+			'email2_dir' => 'Email 2 Dir',
 			'Latitude' => 'Latitude',
 			'Longitude' => 'Longitude',
 			'DeGarde' => 'De Garde',
-			'BoolSupp' => 'Bool Supp',
+			'BoolSupp' => 'Supprimée',
 		);
 	}
 
