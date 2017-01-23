@@ -9,7 +9,7 @@
  * @property string $descrip_prodLign
  * @property string $famile_prodLign
  * @property integer $qte
- * @property string $Date
+ * @property string $date_c
  * @property integer $id_pharmatie
  *
  * The followings are the available model relations:
@@ -37,10 +37,10 @@ class Stock extends CActiveRecord
 			array('qte, id_pharmatie', 'numerical', 'integerOnly'=>true),
 			array('nom_prodLign, descrip_prodLign', 'length', 'max'=>255),
 			array('famile_prodLign', 'length', 'max'=>150),
-			array('Date', 'safe'),
+			array('date_c', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_Stock, nom_prodLign, descrip_prodLign, famile_prodLign, qte, Date, id_pharmatie', 'safe', 'on'=>'search'),
+			array('id_Stock, nom_prodLign, descrip_prodLign, famile_prodLign, qte, date_c, id_pharmatie', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,7 +67,7 @@ class Stock extends CActiveRecord
 			'descrip_prodLign' => 'Descrip Prod Lign',
 			'famile_prodLign' => 'Famile Prod Lign',
 			'qte' => 'Qte',
-			'Date' => 'Date',
+			'date_c' => 'Date C',
 			'id_pharmatie' => 'Id Pharmatie',
 		);
 	}
@@ -95,7 +95,7 @@ class Stock extends CActiveRecord
 		$criteria->compare('descrip_prodLign',$this->descrip_prodLign,true);
 		$criteria->compare('famile_prodLign',$this->famile_prodLign,true);
 		$criteria->compare('qte',$this->qte);
-		$criteria->compare('Date',$this->Date,true);
+		$criteria->compare('date_c',$this->date_c,true);
 		$criteria->compare('id_pharmatie',$this->id_pharmatie);
 
 		return new CActiveDataProvider($this, array(

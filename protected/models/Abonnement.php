@@ -8,7 +8,9 @@
  * @property string $dateExpire
  * @property integer $id_forfaiit
  * @property integer $id_pharm_id
- * @property string $data_abonnement
+ * @property string $date_abonnement
+ * @property integer $sup_abonnement
+ * @property integer $nbr_jourRest
  *
  * The followings are the available model relations:
  * @property Forfaiit $idForfaiit
@@ -33,11 +35,11 @@ class Abonnement extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_abonnement, id_forfaiit, id_pharm_id', 'required'),
-			array('id_abonnement, id_forfaiit, id_pharm_id', 'numerical', 'integerOnly'=>true),
-			array('dateExpire, data_abonnement', 'safe'),
+			array('id_abonnement, id_forfaiit, id_pharm_id, sup_abonnement, nbr_jourRest', 'numerical', 'integerOnly'=>true),
+			array('dateExpire, date_abonnement', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_abonnement, dateExpire, id_forfaiit, id_pharm_id, data_abonnement', 'safe', 'on'=>'search'),
+			array('id_abonnement, dateExpire, id_forfaiit, id_pharm_id, date_abonnement, sup_abonnement, nbr_jourRest', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,7 +66,9 @@ class Abonnement extends CActiveRecord
 			'dateExpire' => 'Date Expire',
 			'id_forfaiit' => 'Id Forfaiit',
 			'id_pharm_id' => 'Id Pharm',
-			'data_abonnement' => 'Data Abonnement',
+			'date_abonnement' => 'Date Abonnement',
+			'sup_abonnement' => 'Sup Abonnement',
+			'nbr_jourRest' => 'Nbr Jour Rest',
 		);
 	}
 
@@ -90,7 +94,9 @@ class Abonnement extends CActiveRecord
 		$criteria->compare('dateExpire',$this->dateExpire,true);
 		$criteria->compare('id_forfaiit',$this->id_forfaiit);
 		$criteria->compare('id_pharm_id',$this->id_pharm_id);
-		$criteria->compare('data_abonnement',$this->data_abonnement,true);
+		$criteria->compare('date_abonnement',$this->date_abonnement,true);
+		$criteria->compare('sup_abonnement',$this->sup_abonnement);
+		$criteria->compare('nbr_jourRest',$this->nbr_jourRest);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
