@@ -11,6 +11,7 @@
  * @property integer $qte
  * @property string $date_c
  * @property integer $id_pharmatie
+ * @property double $prix
  *
  * The followings are the available model relations:
  * @property PharmatieEnligne $idPharmatie
@@ -33,14 +34,15 @@ class Stock extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_pharmatie', 'required'),
+			array('id_pharmatie, prix', 'required'),
 			array('qte, id_pharmatie', 'numerical', 'integerOnly'=>true),
+			array('prix', 'numerical'),
 			array('nom_prodLign, descrip_prodLign', 'length', 'max'=>255),
 			array('famile_prodLign', 'length', 'max'=>150),
 			array('date_c', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_Stock, nom_prodLign, descrip_prodLign, famile_prodLign, qte, date_c, id_pharmatie', 'safe', 'on'=>'search'),
+			array('id_Stock, nom_prodLign, descrip_prodLign, famile_prodLign, qte, date_c, id_pharmatie, prix', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,6 +71,7 @@ class Stock extends CActiveRecord
 			'qte' => 'Qte',
 			'date_c' => 'Date C',
 			'id_pharmatie' => 'Id Pharmatie',
+			'prix' => 'Prix',
 		);
 	}
 
@@ -97,6 +100,7 @@ class Stock extends CActiveRecord
 		$criteria->compare('qte',$this->qte);
 		$criteria->compare('date_c',$this->date_c,true);
 		$criteria->compare('id_pharmatie',$this->id_pharmatie);
+		$criteria->compare('prix',$this->prix);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
